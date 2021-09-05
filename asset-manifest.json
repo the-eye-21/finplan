@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/github.io/finplanner/static/css/main.e44c0360.chunk.css",
-    "main.js": "/github.io/finplanner/static/js/main.06d5d3e8.chunk.js",
-    "main.js.map": "/github.io/finplanner/static/js/main.06d5d3e8.chunk.js.map",
-    "runtime-main.js": "/github.io/finplanner/static/js/runtime-main.10eb1058.js",
-    "runtime-main.js.map": "/github.io/finplanner/static/js/runtime-main.10eb1058.js.map",
-    "static/js/2.45352821.chunk.js": "/github.io/finplanner/static/js/2.45352821.chunk.js",
-    "static/js/2.45352821.chunk.js.map": "/github.io/finplanner/static/js/2.45352821.chunk.js.map",
-    "index.html": "/github.io/finplanner/index.html",
-    "static/css/main.e44c0360.chunk.css.map": "/github.io/finplanner/static/css/main.e44c0360.chunk.css.map",
-    "static/js/2.45352821.chunk.js.LICENSE.txt": "/github.io/finplanner/static/js/2.45352821.chunk.js.LICENSE.txt"
+    "main.css": "/github.io/finplan/static/css/main.e44c0360.chunk.css",
+    "main.js": "/github.io/finplan/static/js/main.06d5d3e8.chunk.js",
+    "main.js.map": "/github.io/finplan/static/js/main.06d5d3e8.chunk.js.map",
+    "runtime-main.js": "/github.io/finplan/static/js/runtime-main.270d0e5c.js",
+    "runtime-main.js.map": "/github.io/finplan/static/js/runtime-main.270d0e5c.js.map",
+    "static/js/2.45352821.chunk.js": "/github.io/finplan/static/js/2.45352821.chunk.js",
+    "static/js/2.45352821.chunk.js.map": "/github.io/finplan/static/js/2.45352821.chunk.js.map",
+    "index.html": "/github.io/finplan/index.html",
+    "static/css/main.e44c0360.chunk.css.map": "/github.io/finplan/static/css/main.e44c0360.chunk.css.map",
+    "static/js/2.45352821.chunk.js.LICENSE.txt": "/github.io/finplan/static/js/2.45352821.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.10eb1058.js",
+    "static/js/runtime-main.270d0e5c.js",
     "static/js/2.45352821.chunk.js",
     "static/css/main.e44c0360.chunk.css",
     "static/js/main.06d5d3e8.chunk.js"
