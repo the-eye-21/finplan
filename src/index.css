@@ -1,13 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+.topContainer{
+  width:100%;
+  height:100%;
+  position:fixed;
+  display:flex;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.inputPane{
+  left:0;
+  overflow-y:scroll;
+  box-sizing: border-box;
+  width: calc(30% - 30px);
+  height: calc(100% - 40px);
+  margin:20px 10px 20px 20px;
+  border-radius:5px;
+  background-color: #dcdeb6;
+  border-color:#cf361f;
+  position:fixed;
+}
+
+.outputChart{
+  right:0;
+  width: calc(70% - 30px);
+  height: calc(100% - 40px);
+  margin:20px 20px 20px 10px;
+  border-radius:5px;
+  background-color:#dcdeb6;
+  border-color:#cf361f;
+  position:fixed;
+}
+
+.invtype{
+  display:flex;
+}
+
+
+.tester{
+  width:1010px;
+  height:810px;
+  border:5px solid red;
+}
+
+
+datalist {
+  display: flex;
+  justify-content: space-between;
+  color: red;
+  width: 50%;
+}
+
+input {
+  width: 50%;
 }
