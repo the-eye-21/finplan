@@ -19,9 +19,6 @@ class Chart extends React.Component{
     // totMoney=this.props.yData2;
     // invMoney=this.props.yData3;
     //
-    console.log(this.props.yData2);
-    console.log(this.props.xData);
-    console.log(this.props.yData1);
     return(
       <div>
 

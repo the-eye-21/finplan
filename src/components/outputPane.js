@@ -35,7 +35,7 @@ class Output extends React.Component{
       let st=this.appState();
       let c=st.Age.currentAge;
       let inf=1+st.Returns.inflation/100;
-      console.log(inf);
+      
       let pv=0;
       for(let i=0;i<n;i++){
           pv+=z[i]*(inf**(c-i-1));
