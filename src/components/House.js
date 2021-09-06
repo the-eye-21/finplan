@@ -1,10 +1,10 @@
 import React from 'react';
 import '../index.css';
-// import axios from 'axios';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Typography from '@material-ui/core/Typography';
-// import Slider from '@material-ui/core/Slider';
 
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Input from '@material-ui/core/Input';
+import Slider from '@material-ui/core/Slider';
 
 class House extends React.Component{
     constructor(props){
@@ -36,9 +36,9 @@ class House extends React.Component{
 
     }
 
-    hdpChange(event){
+    hdpChange(event, newValue){
 
-      let x=parseInt(event.target.value,10);
+      let x=parseInt(newValue,10);
       let newHouse={...this.state.House};
       newHouse.downpay=x;
       this.setState({House:newHouse});
@@ -58,30 +58,92 @@ class House extends React.Component{
 
     render(){
       return(
-        <div className="house">
+        <div className="house inputArea">
         <h3> Money for house </h3>
         <form className="ui form ageForm">
-          <div className="field">
-            <label>At what age do you want to buy a house?</label>
-            <input type="number" step="1" name="house-age" value={this.state.House.age} onChange={this.haChange}/>
-          </div>
+          <Typography id="house-age" gutterBottom>
+              At what age do you want to buy a house?
+          </Typography>
+          <Input
+            value={this.state.House.age}
+            margin="dense"
+            onChange={this.haChange}
 
-          <div className="field">
-            <label>How much do you want to spend on it?(Current Value)</label>
-            <input type="number" step="1000000" name="house-value" value={this.state.House.value} onChange={this.hvChange}/>
-          </div>
+            inputProps={{
+              step: 1,
+              min: 0,
+              type: 'number',
+              'aria-labelledby': 'house-age',
+            }}
+          />
 
-          <div className="field">
-            <label>How much of it would be a down payment?</label>
+          <Typography id="house-value" gutterBottom>
+              How much do you want to spend on it?(Current Value)
+          </Typography>
+          <Input
+            value={this.state.House.value}
+            margin="dense"
+            onChange={this.hvChange}
 
-            <input type="range" min="0" max="100" step="5" name="down-payment" value={this.state.House.downpay} onChange={this.hdpChange}/>
-            <label>{this.state.House.downpay} %</label>
-          </div>
+            inputProps={{
+              step: 1000000,
+              min: 0,
+              type: 'number',
+              'aria-labelledby': 'house-value',
+            }}
+          />
 
-          <div className="field">
-            <label>How long will the loan be?</label>
-            <input type="number" step="1" name="loan-period" value={this.state.House.loanper} onChange={this.hlpChange}/>
-          </div>
+          <Typography id="down-payment" gutterBottom>
+            How much of it would be a down payment?
+          </Typography>
+          <Grid container spacing={2} alignItems="center">
+            <Grid item xs={8}>
+              <Slider
+                value={this.state.House.downpay}
+                onChange={this.hdpChange}
+                aria-labelledby="down-payment"
+                marks={[{value:0,label:'0%'},{value:50,label:'50%'},{value:100,label:'100%'}]}
+                step={10}
+                min={0}
+                max={100}
+              />
+            </Grid>
+            <Grid item xs={3}>
+              <Input
+                value={this.state.House.downpay}
+                margin="dense"
+                onChange={this.hdpChange}
+
+                inputProps={{
+                  step: 10,
+                  min: 0,
+                  max: 100,
+                  type: 'number',
+                  'aria-labelledby': 'down-payment',
+                }}
+              />
+            </Grid>
+          </Grid>
+
+
+          <Typography id="loan-period" gutterBottom>
+            How long will the loan be?
+          </Typography>
+          <Input
+            value={this.state.House.loanper}
+            margin="dense"
+            onChange={this.hlpChange}
+
+            inputProps={{
+              step: 1,
+              min: 0,
+              type: 'number',
+              'aria-labelledby': 'loan-period',
+            }}
+          />
+
+
+
 
         </form>
 

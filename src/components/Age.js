@@ -1,6 +1,9 @@
 import React from 'react';
 import '../index.css';
 
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Input from '@material-ui/core/Input';
 
 class AgeStuff extends React.Component{
     constructor(props){
@@ -12,7 +15,7 @@ class AgeStuff extends React.Component{
 
     }
 
-    ageChange(event){
+    ageChange(event,newValue){
 
       let x=parseInt(event.target.value,10);
       let newAge={...this.state.Age};
@@ -21,7 +24,7 @@ class AgeStuff extends React.Component{
       this.props.stateChange(newAge);
     }
 
-    retChange(event){
+    retChange(event,newValue){
       let x=parseInt(event.target.value,10);
       let newAge={...this.state.Age};
       newAge.retireAge=x;
@@ -32,16 +35,39 @@ class AgeStuff extends React.Component{
 
     render(){
       return(
-        <div className="age">
+        <div className="inputArea">
             <form className="ui form ageForm">
-              <div className="field">
-              <label>how old are you?</label>
-              <input type="number" step="1" name="current-age" value={this.state.Age.currentAge} onChange={this.ageChange}/>
-              </div>
-              <div className="field">
-              <label> And when do you plan on retiring? </label>
-              <input type="number" step="1" name="retire-age" value={this.state.Age.retireAge} onChange={this.retChange}/>
-              </div>
+            <Typography id="current-age" gutterBottom>
+              Current Age
+            </Typography>
+            <Input
+              value={this.state.Age.currentAge}
+              margin="dense"
+              onChange={this.ageChange}
+
+              inputProps={{
+                step: 1,
+                min: 0,
+                type: 'number',
+                'aria-labelledby': 'current-age',
+              }}
+            />
+
+            <Typography id="retire-age" gutterBottom>
+              Retirement Age
+            </Typography>
+            <Input
+              value={this.state.Age.retireAge}
+              margin="dense"
+              onChange={this.retChange}
+              inputProps={{
+                step: 1,
+                min: 0,
+                type: 'number',
+                'aria-labelledby': 'retire-age',
+              }}
+            />
+
             </form>
             <hr />
         </div>

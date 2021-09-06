@@ -1,7 +1,9 @@
 import React from 'react';
 import '../index.css';
 
-
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Input from '@material-ui/core/Input';
 
 
 class MoneyRN extends React.Component{
@@ -24,15 +26,27 @@ class MoneyRN extends React.Component{
 
     render(){
       return(
-        <div>
+        <div className="inputArea">
 
           <div>
           <form className="ui form">
-            <div className="field">
-              <label>How much money do you have rn?</label>
-              <input type="number" min="0"step="100000" name="currbal" value={this.state.Money.currbal} onChange={this.monChange} />
 
-            </div>
+          <Typography id="current-money" gutterBottom>
+              How much money do you have right now?
+          </Typography>
+          <Input
+            value={this.state.Money.currbal}
+            margin="dense"
+            onChange={this.monChange}
+
+            inputProps={{
+              step: 100000,
+              min: 0,
+              type: 'number',
+              'aria-labelledby': 'current-money',
+            }}
+          />
+
             </form>
           </div>
           <hr />

@@ -1,6 +1,9 @@
 import React from 'react';
 import '../index.css';
 
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Input from '@material-ui/core/Input';
 
 class RetirementSave extends React.Component{
     constructor(props){
@@ -35,20 +38,45 @@ class RetirementSave extends React.Component{
 
     render(){
       return(
-        <div className="retirement">
+        <div className="inputArea">
 
         <h3> Retirement Savings </h3>
 
 
+
           <form className="ui form retirementForm">
-            <div className="field">
-              <label> How much do you want to spend each month Post-Retirement? (Today's Value)</label>
-              <input type="number" step="10000" name="retirement-spending" value={this.state.Retirement.monthlyspend} onChange={this.msChange}/>
-            </div>
-            <div className="field">
-              <label> How many years of retirement do you want to plan for?</label>
-              <input type="number" step="1" name="retirement-years" value={this.state.Retirement.numyears} onChange={this.nyChange} />
-            </div>
+
+          <Typography id="monthly-spend" gutterBottom>
+              How much do you want to spend each month in retirement? (Current Value)
+          </Typography>
+          <Input
+            value={this.state.Retirement.monthlyspend}
+            margin="dense"
+            onChange={this.msChange}
+
+            inputProps={{
+              step: 10000,
+              min: 0,
+              type: 'number',
+              'aria-labelledby': 'monthly-spend',
+            }}
+          />
+
+          <Typography id="retirement-years" gutterBottom>
+              How many years of Retirement do you want to plan for?
+          </Typography>
+          <Input
+            value={this.state.Retirement.numyears}
+            margin="dense"
+            onChange={this.nyChange}
+
+            inputProps={{
+              step: 1,
+              min: 0,
+              type: 'number',
+              'aria-labelledby': 'retirement-years',
+            }}
+          />
           </form>
 
           <hr />

@@ -2,44 +2,23 @@ import React from 'react';
 import '../index.css';
 
 
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
+import Input from '@material-ui/core/Input';
+
 
 class ExpReturns extends React.Component{
     constructor(props){
       super(props);
       this.state=this.props.parentState;
-
-      this.consChange=this.consChange.bind(this);
-      this.modChange=this.modChange.bind(this);
-      this.growChange=this.growChange.bind(this);
-      this.infChange=this.infChange.bind(this);
+      this.growChangeMat=this.growChangeMat.bind(this);
+      this.infChangeMat=this.infChangeMat.bind(this);
     }
 
+    growChangeMat(event,newValue){
+      let x=parseInt(newValue,10);
 
-
-
-    consChange(event){
-      console.log(typeof(event.target.value));
-      let x=parseInt(event.target.value,10);
-      let newReturns={...this.state.Returns};
-      newReturns.conservative=x;
-      this.setState({Returns:newReturns});
-      this.props.stateChange(newReturns);
-
-
-    }
-
-    modChange(event){
-      let x=parseInt(event.target.value,10);
-      let newReturns={...this.state.Returns};
-      newReturns.moderate=x;
-      this.setState({Returns:newReturns});
-      this.props.stateChange(newReturns);
-
-
-    }
-
-    growChange(event){
-      let x=parseInt(event.target.value,10);
       let newReturns={...this.state.Returns};
       newReturns.growth=x;
       this.setState({Returns:newReturns});
@@ -47,31 +26,84 @@ class ExpReturns extends React.Component{
 
     }
 
-    infChange(event){
-      let x=parseInt(event.target.value,10);
+    infChangeMat(event,newValue){
+      let x=parseInt(newValue,10);
       let newReturns={...this.state.Returns};
       newReturns.inflation=x;
       this.setState({Returns:newReturns});
       this.props.stateChange(newReturns);
     }
+
+
     render(){
       return(
       <div className="inputArea">
-        <div className="descText">
-
-        </div>
+        
         <div className="expectedReturns">
         <form className="ui form">
-          <div className="field">
-            <label>Expected Returns</label>
-            <input type="range" name="conservative" min="0" max="40" step="1" value={this.state.Returns.growth} onChange={this.growChange}/>
-            <label> {this.state.Returns.growth}</label>
-          </div>
-          <div className="field">
-            <label>Inflation</label>
-            <input type="range" name="inflation" min="0" max="20" step="1" value={this.state.Returns.inflation} onChange={this.infChange} />
-            <label> {this.state.Returns.inflation} </label>
-          </div>
+        <Typography id="expected-returns" gutterBottom>
+          Expected Returns
+        </Typography>
+        <Grid container spacing={2} alignItems="center">
+          <Grid item xs={8}>
+            <Slider
+              value={this.state.Returns.growth}
+              onChange={this.growChangeMat}
+              aria-labelledby="expected-returns"
+              marks={[{value:0,label:'0%'},{value:40,label:'40%'}]}
+              step={1}
+              min={0}
+              max={40}
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Input
+              value={this.state.Returns.growth}
+              margin="dense"
+              onChange={this.growChangeMat}
+
+              inputProps={{
+                step: 1,
+                min: 0,
+                max: 40,
+                type: 'number',
+                'aria-labelledby': 'expected-returns',
+              }}
+            />
+          </Grid>
+        </Grid>
+
+        <Typography id="expected-inflation" gutterBottom>
+          Expected Inflation
+        </Typography>
+        <Grid container spacing={2} alignItems="center">
+          <Grid item xs={8}>
+            <Slider
+              value={this.state.Returns.inflation}
+              onChange={this.infChangeMat}
+              aria-labelledby="expected-inflation"
+              marks={[{value:0,label:'0%'},{value:20,label:'20%'}]}
+              step={1}
+              min={0}
+              max={20}
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Input
+              value={this.state.Returns.inflation}
+              margin="dense"
+              onChange={this.infChangeMat}
+
+              inputProps={{
+                step: 1,
+                min: 0,
+                max: 20,
+                type: 'number',
+                'aria-labelledby': 'expected-inflation',
+              }}
+            />
+          </Grid>
+        </Grid>
 
       </form>
       </div>

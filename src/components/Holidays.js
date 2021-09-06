@@ -1,6 +1,10 @@
 import React from 'react';
 import '../index.css';
 
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Input from '@material-ui/core/Input';
+
 
 class HolidaySpend extends React.Component{
   constructor(props){
@@ -45,21 +49,58 @@ class HolidaySpend extends React.Component{
   render(){
 
     return(
-      <div>
+      <div className="inputArea">
         <h3>Vacation Spending </h3>
         <form className="ui form holidayForm">
-          <div className="field">
-          <label> When do you plan on starting to go on holidays?</label>
-          <input type="number" step="1" name="holiday-age" value={this.state.Holiday.startage} onChange={this.saChange}/>
-          </div>
-          <div className="field">
-          <label> How much do you plan on spending each year? (Current Value) </label>
-          <input type="number" step="10000" name="retire-age" value={this.state.Holiday.yearlyspend} onChange={this.ysChange} />
-          </div>
-          <div className="field">
-          <label> And how much do you want to increase this by each year? (Adjusted for Inflation) </label>
-          <input type="number" step="1" name="retire-age" value={this.state.Holiday.annualinc} onChange={this.aiChange} />
-          </div>
+        <Typography id="holiday-age" gutterBottom>
+            When do you plan on starting to go on holidays?
+        </Typography>
+        <Input
+          value={this.state.Holiday.startage}
+          margin="dense"
+          onChange={this.saChange}
+
+          inputProps={{
+            step: 1,
+            min: 0,
+            type: 'number',
+            'aria-labelledby': 'holiday-age',
+          }}
+        />
+
+        <Typography id="yearly-spend" gutterBottom>
+          How much do you plan on spending each year? (Current Value)
+        </Typography>
+        <Input
+          value={this.state.Holiday.yearlyspend}
+          margin="dense"
+          onChange={this.ysChange}
+
+          inputProps={{
+            step: 10000,
+            min: 0,
+            type: 'number',
+            'aria-labelledby': 'yearly-spend',
+          }}
+        />
+
+        <Typography id="yearly-inc" gutterBottom>
+          And how much do you want to increase this by each year? (Adjusted for Inflation)
+        </Typography>
+        <Input
+          value={this.state.Holiday.annualinc}
+          margin="dense"
+          onChange={this.aiChange}
+
+          inputProps={{
+            step: 1,
+            min: 0,
+            type: 'number',
+            'aria-labelledby': 'yearly-inc',
+          }}
+        />
+
+
 
         </form>
 
