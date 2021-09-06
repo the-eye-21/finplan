@@ -4,7 +4,7 @@ function endBal(spendCurve,inMoney,curAge,retAge,startSIP,growRate){
     let stepUp=1+10/100;
     let gr=1+growRate/100;
     let bal=inMoney;
-    for(let i=curAge;i<spendCurve.length;i++){
+    for(let i=curAge-1;i<spendCurve.length;i++){
 
         bal-=spendCurve[i];
         if(bal<0){return -1000;}
@@ -30,13 +30,15 @@ export default function totalInvest(spendCurve,inMoney,curAge,retAge,preVal,grow
       while(endBal(spendCurve,inMoney,curAge,retAge,upGuess,growRate)<0){
         upGuess*=2;
       }
+      guess=upGuess/2;
       let totnum=0;
       for(let i=0;i<500;i++){
-        if(endBal(spendCurve,inMoney,curAge,retAge,guess,growRate)<0){
+        let x=endBal(spendCurve,inMoney,curAge,retAge,guess,growRate)
+        if(x<0){
           lowGuess=guess;
           guess=(lowGuess+upGuess)/2;
         }
-        else if(endBal(spendCurve,inMoney,curAge,retAge,guess,growRate)>100){
+        else if(x>1000){
           upGuess=guess;
           guess=(lowGuess+upGuess)/2;
         }

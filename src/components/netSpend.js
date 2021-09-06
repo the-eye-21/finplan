@@ -17,6 +17,7 @@ export default function findNetSpend(Age,RR,Ret,Hou,Hol){
     let yearstoret=Age.retireAge-Age.currentAge;
     let infl=1+RR.inflation/100;
     let monsp=Ret.monthlyspend;
+
     //RetirementSpending
     monsp=monsp*(infl**yearstoret);
     for (let i = 0;i<Ret.numyears;i++){
@@ -24,7 +25,7 @@ export default function findNetSpend(Age,RR,Ret,Hou,Hol){
         monsp=monsp*infl;
     }
 
-    //HouseSpendingLOL
+    //HouseSpending
     let hVal=Hou.value*(infl**(Hou.age-Age.currentAge));
     x[Hou.age-1]=hVal*(Hou.downpay)/100;
     let monemi=monthlyEMI(hVal,Hou.downpay,Hou.loanper);
@@ -36,7 +37,7 @@ export default function findNetSpend(Age,RR,Ret,Hou,Hol){
     let holinc=infl+(Hol.annualinc/100);
     let initholspend=Hol.yearlyspend*(infl**(Hol.startage-Age.currentAge));
     for(let i=Hol.startage;i<=Age.retireAge+5;i++){
-      x[i]+=initholspend;
+      x[i-1]+=initholspend;
       initholspend=initholspend*holinc;
     }
 
