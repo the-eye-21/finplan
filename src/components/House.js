@@ -14,7 +14,7 @@ class House extends React.Component{
       this.haChange=this.haChange.bind(this);
       this.hvChange=this.hvChange.bind(this);
       this.hdpChange=this.hdpChange.bind(this);
-//      this.hdpMatChange=this.hdpMatChange.bind(this);
+      this.hdpChangeMat=this.hdpChangeMat.bind(this);
       this.hlpChange=this.hlpChange.bind(this);
 
     }
@@ -36,8 +36,7 @@ class House extends React.Component{
 
     }
 
-    hdpChange(event, newValue){
-
+    hdpChangeMat(event, newValue){
       let x=parseInt(newValue,10);
       let newHouse={...this.state.House};
       newHouse.downpay=x;
@@ -45,6 +44,16 @@ class House extends React.Component{
       this.props.stateChange(newHouse);
 
     }
+
+    hdpChange(event, newValue){
+      let x=parseInt(event.target.value,10);
+      let newHouse={...this.state.House};
+      newHouse.downpay=x;
+      this.setState({House:newHouse});
+      this.props.stateChange(newHouse);
+
+    }
+
     hlpChange(event){
       let x=parseInt(event.target.value,10);
       let newHouse={...this.state.House};
@@ -100,7 +109,7 @@ class House extends React.Component{
             <Grid item xs={8}>
               <Slider
                 value={this.state.House.downpay}
-                onChange={this.hdpChange}
+                onChange={this.hdpChangeMat}
                 aria-labelledby="down-payment"
                 marks={[{value:0,label:'0%'},{value:50,label:'50%'},{value:100,label:'100%'}]}
                 step={10}

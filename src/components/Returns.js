@@ -14,11 +14,12 @@ class ExpReturns extends React.Component{
       this.state=this.props.parentState;
       this.growChangeMat=this.growChangeMat.bind(this);
       this.infChangeMat=this.infChangeMat.bind(this);
+      this.growChange=this.growChange.bind(this);
+      this.infChange=this.infChange.bind(this);
     }
 
     growChangeMat(event,newValue){
       let x=parseInt(newValue,10);
-
       let newReturns={...this.state.Returns};
       newReturns.growth=x;
       this.setState({Returns:newReturns});
@@ -35,10 +36,29 @@ class ExpReturns extends React.Component{
     }
 
 
+    growChange(event){
+      let x=parseInt(event.target.value,10);
+      let newReturns={...this.state.Returns};
+      newReturns.growth=x;
+      this.setState({Returns:newReturns});
+      this.props.stateChange(newReturns);
+
+    }
+
+    infChange(event){
+      let x=parseInt(event.target.value,10);
+      let newReturns={...this.state.Returns};
+      newReturns.inflation=x;
+      this.setState({Returns:newReturns});
+      this.props.stateChange(newReturns);
+    }
+
+
+
     render(){
       return(
       <div className="inputArea">
-        
+
         <div className="expectedReturns">
         <form className="ui form">
         <Typography id="expected-returns" gutterBottom>
@@ -60,7 +80,7 @@ class ExpReturns extends React.Component{
             <Input
               value={this.state.Returns.growth}
               margin="dense"
-              onChange={this.growChangeMat}
+              onChange={this.growChange}
 
               inputProps={{
                 step: 1,
@@ -92,7 +112,7 @@ class ExpReturns extends React.Component{
             <Input
               value={this.state.Returns.inflation}
               margin="dense"
-              onChange={this.infChangeMat}
+              onChange={this.infChange}
 
               inputProps={{
                 step: 1,
