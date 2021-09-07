@@ -30,6 +30,7 @@
   background-color:#dcdeb6;
   border-color:#cf361f;
   position:fixed;
+  overflow-y:scroll;
 }
 
 .invtype{
