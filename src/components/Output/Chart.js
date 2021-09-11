@@ -28,6 +28,7 @@ class Chart extends React.Component{
           type:'line',
           label:"Total Money",
           data: this.props.yData2,
+          backgroundColor: 'rgb(75, 192, 192)',
           borderColor: 'rgb(75, 192, 192)',
           yAxisID :'tot'
 
@@ -37,6 +38,7 @@ class Chart extends React.Component{
           label:"Annual Spending",
           data:this.props.yData1,
           backgroundColor: 'rgba(255, 158, 3,0.4)',
+          borderColor:'rgba(255, 158, 3,0.4)',
           yAxisID :'spend'
         }
       ]
