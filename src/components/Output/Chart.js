@@ -54,7 +54,25 @@ class Chart extends React.Component{
           duration:0,
         },
         plugins: {
-
+          tooltip:{
+            mode:'index',
+            intersect:'false',
+            callbacks:{
+              label: function(context){
+                var label=context.dataset.label;
+                var value=context.parsed.y;
+                if(label){
+                  label+=' : ';
+                }
+                if(value){
+                  if(value>=10000000){label+= (value/10000000).toFixed(2).toString() + ' Crore';}
+                  else if(value>100000){label += (value/100000).toFixed(2).toString() + ' Lakh';}
+                  else {return value;}
+                }
+                return label;
+              }
+            }
+          },
           title: {
             display: true,
             text: "Your Money"
