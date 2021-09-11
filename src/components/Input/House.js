@@ -127,7 +127,7 @@ class House extends React.Component{
 
                 inputProps={{
                   step: 10,
-                  min: 1,
+                  min: 0,
                   max: 100,
                   type: 'number',
                   'aria-labelledby': 'down-payment',
@@ -147,7 +147,7 @@ class House extends React.Component{
 
             inputProps={{
               step: 1,
-              min: 0,
+              min: 1,
               type: 'number',
               'aria-labelledby': 'loan-period',
             }}
