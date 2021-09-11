@@ -40,7 +40,7 @@ class MoneyRN extends React.Component{
             onChange={this.monChange}
 
             inputProps={{
-              step: 100000,
+              step: 500000,
               min: 0,
               type: 'number',
               'aria-labelledby': 'current-money',
