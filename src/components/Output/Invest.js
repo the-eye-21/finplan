@@ -31,7 +31,6 @@ export default function totalInvest(spendCurve,inMoney,curAge,retAge,preVal,grow
         upGuess*=2;
       }
       guess=upGuess/2;
-      let totnum=0;
       for(let i=0;i<500;i++){
         let x=endBal(spendCurve,inMoney,curAge,retAge,guess,growRate)
         if(x<0){

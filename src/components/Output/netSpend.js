@@ -12,7 +12,7 @@ function monthlyEMI(val,dp,per){
 
 
 export default function findNetSpend(Age,RR,Ret,Hou,Hol){
-    let x=Array(Age.retireAge+Ret.numyears);
+    let x=Array(Math.max(Age.retireAge+Ret.numyears,Hou.age+Hou.loanper));
     for(let i=0;i<x.length;i++){x[i]=0;}
     let yearstoret=Age.retireAge-Age.currentAge;
     let infl=1+RR.inflation/100;

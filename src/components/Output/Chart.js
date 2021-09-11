@@ -1,5 +1,5 @@
 import React from 'react';
-import '../index.css';
+import '../../index.css';
 
 import {Line} from 'react-chartjs-2';
 
@@ -42,8 +42,6 @@ class Chart extends React.Component{
       ]
     }
     return(
-      <div>
-
       <div id="tester" className="tester">
       <Line
       id="chart"
@@ -109,7 +107,6 @@ class Chart extends React.Component{
       />
       </div>
 
-      </div>
     )
   }
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import '../index.css';
 
-import Chart from './Chart'
+import Chart from './Output/Chart'
 
-import findNetSpend from './netSpend';
-import totalInvest from './Invest';
-import arrs from './finalArray';
+import findNetSpend from './Output/netSpend';
+import totalInvest from './Output/Invest';
+import arrs from './Output/finalArray';
 
 class Output extends React.Component{
 
@@ -60,8 +60,8 @@ class Output extends React.Component{
 
 
       return(
-        <div>
-          <h1> Required Initial SIP: {parseInt(inSIP,10)} per month increased at 10% per year </h1>
+        <div className="outputChart">
+          <div className="outputHeader"><h1> Required Initial SIP: {parseInt(inSIP,10)} per month increased at 10% per year </h1></div>
           <Chart xData={fin.x} yData1={fin.y1} yData2={fin.y2} yData3={fin.y3} />
         </div>
       )

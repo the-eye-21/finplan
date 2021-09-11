@@ -1,5 +1,5 @@
 import React from 'react';
-import '../index.css';
+import '../../index.css';
 
 
 import Grid from '@material-ui/core/Grid';
@@ -23,7 +23,7 @@ class ExpReturns extends React.Component{
       let newReturns={...this.state.Returns};
       newReturns.growth=x;
       this.setState({Returns:newReturns});
-      this.props.stateChange(newReturns);
+      this.props.stateChange({Returns:newReturns});
 
     }
 
@@ -32,7 +32,7 @@ class ExpReturns extends React.Component{
       let newReturns={...this.state.Returns};
       newReturns.inflation=x;
       this.setState({Returns:newReturns});
-      this.props.stateChange(newReturns);
+      this.props.stateChange({Returns:newReturns});
     }
 
 
@@ -41,7 +41,7 @@ class ExpReturns extends React.Component{
       let newReturns={...this.state.Returns};
       newReturns.growth=x;
       this.setState({Returns:newReturns});
-      this.props.stateChange(newReturns);
+      this.props.stateChange({Returns:newReturns});
 
     }
 
@@ -50,7 +50,7 @@ class ExpReturns extends React.Component{
       let newReturns={...this.state.Returns};
       newReturns.inflation=x;
       this.setState({Returns:newReturns});
-      this.props.stateChange(newReturns);
+      this.props.stateChange({Returns:newReturns});
     }
 
 

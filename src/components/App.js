@@ -37,10 +37,11 @@ class App extends React.Component{
       },
       Holiday:{
         startage:30,
-        yearlyspend:50000,
+        yearlyspend:200000,
         annualinc:5,
         intype:"growth"
-      }
+      },
+      Note:true
 
     }
     this.updateState=this.updateState.bind(this);
@@ -68,9 +69,9 @@ class App extends React.Component{
       <div className="inputPane">
       <InputScreen parentState={this.state} updateState={this.updateState} />
       </div>
-      <div className="outputChart">
+      <div className="outputPane">
 
-      
+
 
       <Output parentState={this.StateToChild} />
 

@@ -1,5 +1,3 @@
-
-
 .topContainer{
   width:100%;
   height:100%;
@@ -16,31 +14,40 @@
   height: calc(100% - 40px);
   margin:20px 10px 20px 20px;
   border-radius:5px;
-  background-color: #dcdeb6;
+  background-color: #e9ebe4;
   border-color:#cf361f;
   position:fixed;
 }
 
-.outputChart{
+.outputPane{
   right:0;
   width: calc(70% - 30px);
   height: calc(100% - 40px);
   margin:20px 20px 20px 10px;
   border-radius:5px;
-  background-color:#dcdeb6;
+  background-color:#e9ebe4;
   border-color:#cf361f;
   position:fixed;
-  overflow-y:scroll;
 }
 
 .invtype{
   display:flex;
 }
 
+.outputChart{
+  display:flex;
+  flex-flow: column;
+  height:100%
+}
+
+.outputHeader{
+  width:100%;
+  flex: 0 1 auto;
+}
 
 .tester{
-  width:1010px;
-  height:810px;
+  width:100%;
+  flex:1 0 auto;
   border:5px solid red;
 }
 

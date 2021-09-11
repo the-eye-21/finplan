@@ -1,7 +1,8 @@
 import React from 'react';
-import '../index.css';
+import '../../index.css';
 
-import Grid from '@material-ui/core/Grid';
+
+
 import Typography from '@material-ui/core/Typography';
 import Input from '@material-ui/core/Input';
 
@@ -19,7 +20,7 @@ class RetirementSave extends React.Component{
       let newRet={...this.state.Retirement};
       newRet.monthlyspend=x;
       this.setState({Retirement:newRet});
-      this.props.stateChange(newRet);
+      this.props.stateChange({Retirement:newRet});
     }
 
 
@@ -29,7 +30,7 @@ class RetirementSave extends React.Component{
       let newRet={...this.state.Retirement};
       newRet.numyears=x;
       this.setState({Retirement:newRet});
-      this.props.stateChange(newRet);
+      this.props.stateChange({Retirement:newRet});
 
     }
 

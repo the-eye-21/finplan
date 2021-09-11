@@ -1,7 +1,6 @@
 import React from 'react';
-import '../index.css';
+import '../../index.css';
 
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Input from '@material-ui/core/Input';
 
@@ -16,20 +15,28 @@ class AgeStuff extends React.Component{
     }
 
     ageChange(event,newValue){
-
       let x=parseInt(event.target.value,10);
       let newAge={...this.state.Age};
       newAge.currentAge=x;
+      if(x>=this.state.Age.retireAge){newAge.retireAge=x+1;}
+
       this.setState({Age:newAge});
-      this.props.stateChange(newAge);
+      this.props.stateChange({Age:newAge});
+      if(x>=this.state.House.age){
+          let newHouse={...this.state.House};
+          newHouse.age=x+1;
+          this.setState({House:newHouse});
+          this.props.stateChange({House:newHouse});
+      }
     }
 
     retChange(event,newValue){
       let x=parseInt(event.target.value,10);
+      if(x<=this.state.Age.currentAge){x=this.state.Age.currentAge+1;}
       let newAge={...this.state.Age};
       newAge.retireAge=x;
       this.setState({Age:newAge});
-      this.props.stateChange(newAge);
+      this.props.stateChange({Age:newAge});
     }
 
 

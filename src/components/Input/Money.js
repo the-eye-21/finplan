@@ -1,7 +1,7 @@
 import React from 'react';
-import '../index.css';
+import '../../index.css';
 
-import Grid from '@material-ui/core/Grid';
+
 import Typography from '@material-ui/core/Typography';
 import Input from '@material-ui/core/Input';
 
@@ -20,7 +20,7 @@ class MoneyRN extends React.Component{
       let newMoney={...this.state.Money};
       newMoney.currbal=x;
       this.setState({Money:newMoney});
-      this.props.stateChange(newMoney);
+      this.props.stateChange({Money:newMoney});
 
     }
 

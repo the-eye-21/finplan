@@ -1,5 +1,5 @@
 import React from 'react';
-import '../index.css';
+import '../../index.css';
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -21,10 +21,11 @@ class House extends React.Component{
 
     haChange(event){
       let x=parseInt(event.target.value,10);
+      if(x<=this.state.Age.currentAge)x=this.state.Age.currentAge+1;
       let newHouse={...this.state.House};
       newHouse.age=x;
       this.setState({House:newHouse});
-      this.props.stateChange(newHouse);
+      this.props.stateChange({House:newHouse});
 
     }
     hvChange(event){
@@ -32,7 +33,7 @@ class House extends React.Component{
       let newHouse={...this.state.House};
       newHouse.value=x;
       this.setState({House:newHouse});
-      this.props.stateChange(newHouse);
+      this.props.stateChange({House:newHouse});
 
     }
 
@@ -41,7 +42,7 @@ class House extends React.Component{
       let newHouse={...this.state.House};
       newHouse.downpay=x;
       this.setState({House:newHouse});
-      this.props.stateChange(newHouse);
+      this.props.stateChange({House:newHouse});
 
     }
 
@@ -50,16 +51,17 @@ class House extends React.Component{
       let newHouse={...this.state.House};
       newHouse.downpay=x;
       this.setState({House:newHouse});
-      this.props.stateChange(newHouse);
+      this.props.stateChange({House:newHouse});
 
     }
 
     hlpChange(event){
       let x=parseInt(event.target.value,10);
+      if(x+this.state.House.age>this.state.Age.retireAge){x=this.state.Age.retireAge-this.state.House.age;}
       let newHouse={...this.state.House};
       newHouse.loanper=x;
       this.setState({House:newHouse});
-      this.props.stateChange(newHouse);
+      this.props.stateChange({House:newHouse});
 
     }
 
@@ -125,7 +127,7 @@ class House extends React.Component{
 
                 inputProps={{
                   step: 10,
-                  min: 0,
+                  min: 1,
                   max: 100,
                   type: 'number',
                   'aria-labelledby': 'down-payment',

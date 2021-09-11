@@ -1,7 +1,6 @@
 import React from 'react';
-import '../index.css';
+import '../../index.css';
 
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Input from '@material-ui/core/Input';
 
@@ -19,9 +18,10 @@ class HolidaySpend extends React.Component{
   saChange(event){
     let x=parseInt(event.target.value,10);
     let newHol={...this.state.Holiday};
+    if(x<this.state.Age.currentAge){x=this.state.Age.currentAge+1;}
     newHol.startage=x;
     this.setState({Holiday:newHol});
-    this.props.stateChange(newHol);
+    this.props.stateChange({Holidat:newHol});
 
   }
 
@@ -30,7 +30,7 @@ class HolidaySpend extends React.Component{
     let newHoliday={...this.state.Holiday};
     newHoliday.yearlyspend=x;
     this.setState({Holiday:newHoliday});
-    this.props.stateChange(newHoliday);
+    this.props.stateChange({Holidat:newHoliday});
 
 
   }
@@ -40,7 +40,7 @@ class HolidaySpend extends React.Component{
     let newHoliday={...this.state.Holiday};
     newHoliday.annualinc=x;
     this.setState({Holiday:newHoliday});
-    this.props.stateChange(newHoliday);
+    this.props.stateChange({Holidat:newHoliday});
 
 
   }
