@@ -34,10 +34,7 @@ export default function Dir() {
           Add all the details about your age, current savings, and other things.<br />
           In case you already have a house, just change the value of the house to 0 and you should be good. <br />
 
-          Important Stuff:<br/>
-          Don't click backspace to enter a new value on the number inputs to change them<br />
-          Haven't figured out how to change that yet<br />
-
+        
           Thank You
         </div>
         </div>
