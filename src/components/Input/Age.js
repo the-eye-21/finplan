@@ -21,7 +21,7 @@ class AgeStuff extends React.Component{
       if(x>=this.state.Age.retireAge){newAge.retireAge=x+1;}
 
       this.setState({Age:newAge});
-      this.props.stateChange({Age:newAge});
+      if(event.target.value){this.props.stateChange({Age:newAge});}
       if(x>=this.state.House.age){
           let newHouse={...this.state.House};
           newHouse.age=x+1;
@@ -36,7 +36,7 @@ class AgeStuff extends React.Component{
       let newAge={...this.state.Age};
       newAge.retireAge=x;
       this.setState({Age:newAge});
-      this.props.stateChange({Age:newAge});
+      if(event.target.value){this.props.stateChange({Age:newAge});}
     }
 
 

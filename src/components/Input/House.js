@@ -25,7 +25,7 @@ class House extends React.Component{
       let newHouse={...this.state.House};
       newHouse.age=x;
       this.setState({House:newHouse});
-      this.props.stateChange({House:newHouse});
+      if(event.target.value){this.props.stateChange({House:newHouse});}
 
     }
     hvChange(event){
@@ -33,7 +33,7 @@ class House extends React.Component{
       let newHouse={...this.state.House};
       newHouse.value=x;
       this.setState({House:newHouse});
-      this.props.stateChange({House:newHouse});
+      if(event.target.value){this.props.stateChange({House:newHouse});}
 
     }
 
@@ -51,7 +51,7 @@ class House extends React.Component{
       let newHouse={...this.state.House};
       newHouse.downpay=x;
       this.setState({House:newHouse});
-      this.props.stateChange({House:newHouse});
+      if(event.target.value){this.props.stateChange({House:newHouse});}
 
     }
 
@@ -61,7 +61,7 @@ class House extends React.Component{
       let newHouse={...this.state.House};
       newHouse.loanper=x;
       this.setState({House:newHouse});
-      this.props.stateChange({House:newHouse});
+      if(event.target.value){this.props.stateChange({House:newHouse});}
 
     }
 

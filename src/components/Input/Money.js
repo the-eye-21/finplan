@@ -20,7 +20,7 @@ class MoneyRN extends React.Component{
       let newMoney={...this.state.Money};
       newMoney.currbal=x;
       this.setState({Money:newMoney});
-      this.props.stateChange({Money:newMoney});
+      if(event.target.value){this.props.stateChange({Money:newMoney});}
 
     }
 

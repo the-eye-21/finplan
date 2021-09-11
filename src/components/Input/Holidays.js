@@ -21,26 +21,26 @@ class HolidaySpend extends React.Component{
     if(x<this.state.Age.currentAge){x=this.state.Age.currentAge+1;}
     newHol.startage=x;
     this.setState({Holiday:newHol});
-    this.props.stateChange({Holiday:newHol});
+    if(event.target.value){this.props.stateChange({Holiday:newHol});}
 
   }
 
   ysChange(event){
     let x=parseInt(event.target.value,10);
-    let newHoliday={...this.state.Holiday};
-    newHoliday.yearlyspend=x;
-    this.setState({Holiday:newHoliday});
-    this.props.stateChange({Holiday:newHoliday});
+    let newHol={...this.state.Holiday};
+    newHol.yearlyspend=x;
+    this.setState({Holiday:newHol});
+    if(event.target.value){this.props.stateChange({Holiday:newHol});}
 
 
   }
 
   aiChange(event){
     let x=parseInt(event.target.value,10);
-    let newHoliday={...this.state.Holiday};
-    newHoliday.annualinc=x;
-    this.setState({Holiday:newHoliday});
-    this.props.stateChange({Holiday:newHoliday});
+    let newHol={...this.state.Holiday};
+    newHol.annualinc=x;
+    this.setState({Holiday:newHol});
+    if(event.target.value){this.props.stateChange({Holiday:newHol});}
 
 
   }

@@ -41,7 +41,7 @@ class ExpReturns extends React.Component{
       let newReturns={...this.state.Returns};
       newReturns.growth=x;
       this.setState({Returns:newReturns});
-      this.props.stateChange({Returns:newReturns});
+      if(event.target.value){this.props.stateChange({Returns:newReturns});}
 
     }
 
@@ -50,7 +50,7 @@ class ExpReturns extends React.Component{
       let newReturns={...this.state.Returns};
       newReturns.inflation=x;
       this.setState({Returns:newReturns});
-      this.props.stateChange({Returns:newReturns});
+      if(event.target.value){this.props.stateChange({Returns:newReturns});}
     }
 
 

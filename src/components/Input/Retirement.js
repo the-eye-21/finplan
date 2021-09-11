@@ -20,7 +20,7 @@ class RetirementSave extends React.Component{
       let newRet={...this.state.Retirement};
       newRet.monthlyspend=x;
       this.setState({Retirement:newRet});
-      this.props.stateChange({Retirement:newRet});
+      if(event.target.value){this.props.stateChange({Retirement:newRet});}
     }
 
 
@@ -30,7 +30,7 @@ class RetirementSave extends React.Component{
       let newRet={...this.state.Retirement};
       newRet.numyears=x;
       this.setState({Retirement:newRet});
-      this.props.stateChange({Retirement:newRet});
+      if(event.target.value){this.props.stateChange({Retirement:newRet});}
 
     }
 
