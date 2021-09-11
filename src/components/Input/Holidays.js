@@ -21,7 +21,7 @@ class HolidaySpend extends React.Component{
     if(x<this.state.Age.currentAge){x=this.state.Age.currentAge+1;}
     newHol.startage=x;
     this.setState({Holiday:newHol});
-    this.props.stateChange({Holidat:newHol});
+    this.props.stateChange({Holiday:newHol});
 
   }
 
@@ -30,7 +30,7 @@ class HolidaySpend extends React.Component{
     let newHoliday={...this.state.Holiday};
     newHoliday.yearlyspend=x;
     this.setState({Holiday:newHoliday});
-    this.props.stateChange({Holidat:newHoliday});
+    this.props.stateChange({Holiday:newHoliday});
 
 
   }
@@ -40,7 +40,7 @@ class HolidaySpend extends React.Component{
     let newHoliday={...this.state.Holiday};
     newHoliday.annualinc=x;
     this.setState({Holiday:newHoliday});
-    this.props.stateChange({Holidat:newHoliday});
+    this.props.stateChange({Holiday:newHoliday});
 
 
   }
@@ -85,7 +85,7 @@ class HolidaySpend extends React.Component{
         />
 
         <Typography id="yearly-inc" gutterBottom>
-          And how much do you want to increase this by each year? (Adjusted for Inflation)
+          And how much do you want to increase this by each year? (%age after adjusting for Inflation)
         </Typography>
         <Input
           value={this.state.Holiday.annualinc}
