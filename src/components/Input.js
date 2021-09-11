@@ -8,7 +8,8 @@ import HolidaySpend from './Input/Holidays';
 import RetirementSave from './Input/Retirement';
 import House from './Input/House';
 import SimplePopper from './Input/Note';
-
+import Dir from './Input/HowTo';
+import Grid from '@material-ui/core/Grid';
 
 class InputScreen extends React.Component{
     constructor(props){
@@ -34,7 +35,14 @@ class InputScreen extends React.Component{
     render(){
       return(
         <div>
-        <SimplePopper />
+        <Grid container direction="row" justifyContent="space-around" alignItems="center" style={{height:"50px"}}>
+          <Grid item xs={3}>
+            <SimplePopper />
+          </Grid>
+          <Grid item xs={3}>
+            <Dir />
+          </Grid>
+        </Grid>
         <AgeStuff parentState={this.state} stateChange={this.updState} />
         <ExpReturns parentState={this.state} stateChange={this.updState} />
         <MoneyRN parentState={this.state} stateChange={this.updState}/>
