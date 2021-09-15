@@ -61,7 +61,7 @@ class Output extends React.Component{
 
       return(
         <div className="outputChart">
-          <div className="outputHeader"><h1> Required Initial SIP: {parseInt(inSIP,10)} per month increased at 10% per year </h1></div>
+          <div className="outputHeader"><h1> You will have enough money if you start an SIP of <span className="bigText">{parseInt(inSIP,10)}</span> per month and increase it by 10% each year </h1></div>
           <Chart xData={fin.x} yData1={fin.y1} yData2={fin.y2} yData3={fin.y3} />
         </div>
       )

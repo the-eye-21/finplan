@@ -66,3 +66,12 @@ datalist {
 input {
   width: 50%;
 }
+
+.outputHeader{
+  padding: 10px 0px 5px 10px;
+
+}
+
+.bigText{
+  font-size:50px;
+}
