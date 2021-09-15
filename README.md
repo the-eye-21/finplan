@@ -4,4 +4,4 @@
 
 
 
-Logo made by [Freepik][https://www.flaticon.com/authors/freepik]
+Logo made by [Freepik](https://www.flaticon.com/authors/freepik)
