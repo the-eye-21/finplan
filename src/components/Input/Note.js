@@ -38,10 +38,7 @@ export default function SimplePopper() {
             <li> You continue investing money in the SIP until you retire </li>
             <li> All the money that you are looking at in this is paid for from your savings </li>
             <li> Your salary pays for all your other expenses before you retire</li>
-<<<<<<< HEAD
-            <li> You aren't necessarily leaving any money for your kids after you die </li>
-=======
->>>>>>> c4f79138d2258ae5fc72c0b3a82c0d1cb910c407
+            <li> You aren't necessarily leaving any money for your kids </li>
 
           </ol>
         </div>
