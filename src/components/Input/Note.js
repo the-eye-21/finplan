@@ -41,6 +41,9 @@ export default function SimplePopper() {
             <li> You aren't necessarily leaving any money for your kids </li>
 
           </ol>
+          <div>Made by Lochan Manthena</div>
+          <div><a href="https://github.com/the-eye-21/finplan">Github</a></div>
+          <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a></div>
         </div>
         </div>
       </Popper>
