@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/finplan/static/css/main.3a3a7447.chunk.css",
-    "main.js": "/finplan/static/js/main.6aeaf3a4.chunk.js",
-    "main.js.map": "/finplan/static/js/main.6aeaf3a4.chunk.js.map",
+    "main.css": "/finplan/static/css/main.1c786a57.chunk.css",
+    "main.js": "/finplan/static/js/main.edb072cf.chunk.js",
+    "main.js.map": "/finplan/static/js/main.edb072cf.chunk.js.map",
     "runtime-main.js": "/finplan/static/js/runtime-main.519ae5fa.js",
     "runtime-main.js.map": "/finplan/static/js/runtime-main.519ae5fa.js.map",
     "static/js/2.de2feb34.chunk.js": "/finplan/static/js/2.de2feb34.chunk.js",
     "static/js/2.de2feb34.chunk.js.map": "/finplan/static/js/2.de2feb34.chunk.js.map",
     "index.html": "/finplan/index.html",
-    "static/css/main.3a3a7447.chunk.css.map": "/finplan/static/css/main.3a3a7447.chunk.css.map",
+    "static/css/main.1c786a57.chunk.css.map": "/finplan/static/css/main.1c786a57.chunk.css.map",
     "static/js/2.de2feb34.chunk.js.LICENSE.txt": "/finplan/static/js/2.de2feb34.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.519ae5fa.js",
     "static/js/2.de2feb34.chunk.js",
-    "static/css/main.3a3a7447.chunk.css",
-    "static/js/main.6aeaf3a4.chunk.js"
+    "static/css/main.1c786a57.chunk.css",
+    "static/js/main.edb072cf.chunk.js"
   ]
 }
