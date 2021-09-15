@@ -36,7 +36,8 @@ export default function SimplePopper() {
             <li> You stop going on vacations 5 years after you retire </li>
             <li> Interest on House Loan is at 9% pa  </li>
             <li> You continue investing money in the SIP until you retire </li>
-            <li> All the money that you are looking at in this is paid for from your savinds </li>
+            <li> All the money that you are looking at in this is paid for from your savings </li>
+            <li> Your salary pays for all your other expenses before you retire</li>
 
           </ol>
         </div>
